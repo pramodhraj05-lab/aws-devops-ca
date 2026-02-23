@@ -22,22 +22,21 @@ jobs:
           script: |
             cd /home/ubuntu
 
-            # Kill anything using port 80
-            sudo fuser -k 80/tcp || true
+            echo "Stopping all running containers..."
+            docker stop $(docker ps -q) || true
 
-            # Stop and remove old container
-            docker stop myapp || true
-            docker rm myapp || true
+            echo "Removing all containers..."
+            docker rm $(docker ps -aq) || true
 
-            # Remove old project
+            echo "Removing old project..."
             rm -rf aws-devops-ca
 
-            # Clone fresh code
+            echo "Cloning fresh repo..."
             git clone https://github.com/pramodhraj05-lab/aws-devops-ca.git
             cd aws-devops-ca/app
 
-            # Build image
+            echo "Building Docker image..."
             docker build -t myapp .
 
-            # Run container
+            echo "Running container on port 80..."
             docker run -d -p 80:80 --name myapp myapp
