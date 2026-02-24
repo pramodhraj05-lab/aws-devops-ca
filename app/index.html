@@ -1,10 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Network Systems and Administration CA one 2026</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pramodh Selvaraj  DevOps Cloud Project</title>
+
+<link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-    <h1>Deployment Successful</h1>
-    <p>Terraform + Ansible + Docker</p>
-</body>
+
+<div class="hero">
+  <div class="overlay"></div>
+
+  <div class="content">
+    <h1>🚀 Pramodh Selvaraj  DevOps Cloud Project</h1>
+
+    <div class="subtitle">
+      Terraform | Ansible | Docker | GitHub Actions | AWS EC2
+    </div>
+
+    <div class="quote-box" id="quote">
+      Loading motivation...
+    </div>
+  </div>
+</div>
+
+<script>
+const quotes = [
+  "Always be a fruit behind a leaf"
+  "Discipline beats motivation.",
+  "Automation is the key to scalability.",
+  "Consistency creates mastery.",
+  "Execution > Ideas.",
+  "Build once. Deploy everywhere."
+];
+
+function updateQuote() {
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  document.getElementById("quote").style.opacity = 0;
+
+  setTimeout(() => {
+    document.getElementById("quote").innerText = quotes[randomIndex];
+    document.getElementById("quote").style.opacity = 1;
+  }, 300);
+}
+
+setInterval(updateQuote, 8000);
+updateQuote();
+</script>
+
+</body>	
 </html>
